@@ -5,16 +5,16 @@ require_relative '../lib/ruby_intro'
 describe 'Ruby intro part 1' do
   describe '#sum' do
 
-    it 'returns correct sum [1 point]', points: 1 do
-      expect(sum([1, 2, 3, 4, 5])).to be_a_kind_of Integer
-      expect(sum([1, 2, 3, 4, 5])).to eq(15)
-      expect(sum([1, 2, 3, 4, -5])).to eq(5)
-      expect(sum([1, 2, 3, 4, -5, 5, -100])).to eq(-90)
+    it 'returns correct sum [1 point]', points: 1 do # If any of the following tests do not return the expected result, throws an rspec error.
+      expect(sum([1, 2, 3, 4, 5])).to be_a_kind_of Integer # Checks if sum with the provided input array returns an integer.
+      expect(sum([1, 2, 3, 4, 5])).to eq(15) # Checks if sum with the provided input array returns 15.
+      expect(sum([1, 2, 3, 4, -5])).to eq(5) # Checks if sum with the provided input array returns 5.
+      expect(sum([1, 2, 3, 4, -5, 5, -100])).to eq(-90) # Checks if sum with the provided input array returns -90.
     end
 
-    it 'works on the empty array [2 points]', points: 2 do
-      expect { sum([]) }.not_to raise_error
-      expect(sum([])).to be_zero
+    it 'works on the empty array [2 points]', points: 2 do # If any of the following tests do not return the expected result, throws an rspec error.
+      expect { sum([]) }.not_to raise_error # Checks if sum with an empty array does not throw an error.
+      expect(sum([])).to be_zero # Checks if sum with an empty array returns 0.
     end
   end
 
