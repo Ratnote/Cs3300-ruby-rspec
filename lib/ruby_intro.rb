@@ -45,14 +45,14 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  sum_to_n = false
+  sum_to_n = false # Initializes the return variable to false.
 
-  i = 0
-  j = 0
-  while i < arr.size - 1
+  i = 0 # First iterator initialized to 0.
+  j = 0 # Second iterator initialzied to 0.
+  while i < arr.size - 1 # Doesn't need to go to the last index of arr because every possible combination involving that index will have already been tested.
     j = 0
     while j < arr.size
-      if arr[i] + arr[j] == n && i != j
+      if arr[i] + arr[j] == n && i != j # Checks if two different indexs added together equals n.
         sum_to_n = true
       end
       j = j + 1
@@ -70,9 +70,9 @@ def hello(name)
 end
 
 def starts_with_consonant? s
-  starts_with_consonant = true
+  starts_with_consonant = true # Initializes return value to true.
   
-  if /^[^aeiou\W]/i.match(s) == nil
+  if /^[^aeiou\W]/i.match(s) == nil # Checks if the initial character of s is a vowel.
     starts_with_consonant = false
   end
 
@@ -87,33 +87,33 @@ end
 # Part 3
 
 class BookInStock
-  def initialize (isbn, price)
-    if isbn == '' || price <= 0
+  def initialize (isbn, price) # Constructor
+    if isbn == '' || price <= 0 # If the ISBN or price are invalid, throw an error.
       raise ArgumentError
     end
 
-    @isbn = isbn
-    @price = price
+    @isbn = isbn # Set initial ISBN.
+    @price = price # Set initial price.
   end
 
-  def isbn ()
+  def isbn () # ISBN getter.
     return @isbn
   end
 
-  def price ()
+  def price () # Price getter.
     return @price
   end
 
-  def isbn= (isbn)
+  def isbn= (isbn) # ISBN setter.
     @isbn = isbn
   end
 
-  def price= (price)
+  def price= (price) # Price setter.
     @price = price
   end
 
-  def price_as_string
-    result = sprintf('%.2f', @price)
-    return "$" + result
+  def price_as_string 
+    result = sprintf('%.2f', @price) # Create a string of the form ##.##
+    return "$" + result # Add a $ to the front of the previous string.
   end
 end
